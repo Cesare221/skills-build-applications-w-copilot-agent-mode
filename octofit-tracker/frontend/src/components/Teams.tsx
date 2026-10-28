@@ -1,10 +1,11 @@
 import { CapabilityCard } from './CapabilityCard.js';
 import { useApiResource } from '../api/useApiResource.js';
+import { getJson } from '../api/client.js';
 
 type Team = { _id?: string; name: string; mascot?: string; members: string[] };
 
 export default function Teams() {
-  const resource = useApiResource<{ teams: Team[] }>('/api/teams');
+  const resource = useApiResource('/api/teams', getJson<{ teams: Team[] }>);
   return <CapabilityCard title="Teams" description="Manage teams and members.">
     {resource.status === 'loading' && <p role="status">Loading teams...</p>}
     {resource.status === 'error' && <p role="alert">Unable to load teams: {resource.message}</p>}
