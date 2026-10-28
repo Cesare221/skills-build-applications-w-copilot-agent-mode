@@ -47,3 +47,11 @@ Record the commands you run and what each failure means.
 - Frontend command: `npm test --prefix octofit-tracker/frontend` (15 tests passed)
 - Backend build command: `npm run build --prefix octofit-tracker/backend` (passed)
 - Frontend build command: `npm run build --prefix octofit-tracker/frontend` (TypeScript and Vite build passed)
+
+### Step 1 baseline verification
+
+The architecture and test plan were reviewed, and the local Step 1 grader passed on the build-octofit-app branch.
+
+### Step 1 baseline verification
+
+The architecture and test plan were reviewed, and the local Step 1 grader passed on the build-octofit-app branch.
