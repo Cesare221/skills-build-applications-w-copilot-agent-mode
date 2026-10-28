@@ -51,7 +51,3 @@ Record the commands you run and what each failure means.
 ### Step 1 baseline verification
 
 The architecture and test plan were reviewed, and the local Step 1 grader passed on the build-octofit-app branch.
-
-### Step 1 baseline verification
-
-The architecture and test plan were reviewed, and the local Step 1 grader passed on the build-octofit-app branch.
