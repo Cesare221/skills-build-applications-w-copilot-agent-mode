@@ -13,7 +13,7 @@ function isObjectId(value: unknown): value is string {
 }
 
 export async function listActivities() {
-  return Activity.find().sort({ occurredAt: -1 }).lean();
+  return Activity.find().sort({ occurredAt: -1, _id: 1 }).lean();
 }
 
 export async function createActivity(input: unknown) {
