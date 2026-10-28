@@ -30,20 +30,20 @@ OctoFit Tracker is a three-tier application for a school fitness program. The st
 
 Record your plan here before editing code.
 
-- Presentation tier decision:
-- Logic tier decision:
-- Data tier decision:
-- Activity tracking approach:
-- Team management approach:
-- Leaderboard approach:
-- Workout suggestions approach:
+- Presentation tier decision: Use a shared API resource hook and keep loading, empty, success, and error rendering in each capability component.
+- Logic tier decision: Keep request validation and business behavior in explicit Express service functions; return deliberate 4xx responses for invalid or missing references.
+- Data tier decision: Enforce required fields in Mongoose schemas and retain the existing idempotent, non-destructive seed behavior.
+- Activity tracking approach: Validate user/team IDs and references, store submitted activity data, compute points from minutes, and timestamp creation.
+- Team management approach: Require a name and mascot, validate optional member IDs, and preserve member references in created/listed teams.
+- Leaderboard approach: Sum activity points by team, sort highest first, and assign 1-based ranks.
+- Workout suggestions approach: Match a known user's goal when available, otherwise use recent activity focus; include a reason and return 404 for unknown users.
 
 ## Test plan
 
 Record the commands you run and what each failure means.
 
-- Data-tier command: `npm run test:data --prefix octofit-tracker/backend`
-- API command: `npm run test:api --prefix octofit-tracker/backend`
-- Frontend command: `npm test --prefix octofit-tracker/frontend`
-- Backend build command: `npm run build --prefix octofit-tracker/backend`
-- Frontend build command: `npm run build --prefix octofit-tracker/frontend`
+- Data-tier command: `npm run test:data --prefix octofit-tracker/backend` (5 tests passed)
+- API command: `npm run test:api --prefix octofit-tracker/backend` (4 tests passed)
+- Frontend command: `npm test --prefix octofit-tracker/frontend` (15 tests passed)
+- Backend build command: `npm run build --prefix octofit-tracker/backend` (passed)
+- Frontend build command: `npm run build --prefix octofit-tracker/frontend` (TypeScript and Vite build passed)
